@@ -10,6 +10,7 @@ Setup the Data Visualization with **Amazon QuickSight** in the AWS Management Co
 - Uncheck the option **Add Pixel-Perfect Reports**.
 
 **Connect to the Data Source**
+> Note: QuickSight is region-specific. Ensure you are working in the same AWS region as your S3 buckets.
 - In QuickSight, select **New Dataset** under **Datasets**.
 - Select **S3** as the data source.
 	- Enter the Data Source Name: `ProcessedCSVData`
@@ -25,5 +26,3 @@ Setup the Data Visualization with **Amazon QuickSight** in the AWS Management Co
 - Select **Share** -> **Publish dashboard**
 - Name the dashboard (e.g., `Weather Data Dashboard`).
 - Choose users or groups to share with.
-
-> Note: QuickSight is region-specific. Ensure you are working in the same AWS region as your S3 buckets.

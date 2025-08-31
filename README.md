@@ -60,6 +60,17 @@ To provision the required AWS infrastructure, deploy using **Terraform** templat
 
 Also confirm the AWS CLI is configured (`aws configure`) with credentials that have sufficient permissions to create **S3 buckets**, **Lambda functions**, and manage **IAM roles**.
 
+## How to Use
+1. **Deploy the infrastructure** using Terraform.
+
+2. **Create a new folder** named `raw` in the `csv-raw-data` S3 bucket. Upload the assets/weather_data.csv file to the folder to trigger the S3 event. Verify that the file was processed and copied to the `csv-processed-data/processed/` folder.
+
+3. **Create the Glue resources manually in the AWS Management Console**, following these steps: setup a Glue Data Catalog, create a Glue Crawler to discover schema, create a Glue Job using Visual ETL, and prepare transformed data for visualization. See [GLUE_SETUP.md](assets/GLUE_SETUP.md) for full details.
+
+4. **Visualize the data using QuickSight in the AWS Management Console**, following these steps: setup a QuickSight account, connect to the data source using the manifest.json file, build a QuickSight dashboard, and share/publish the dashboard. See [QUICKSIGHT_SETUP.md](assets/QUICKSIGHT_SETUP.md) for full details.
+
+5. **Test pipeline with new data, ensuring dynamic updates.**
+
 ## Project Structure
 ```plaintext
 aws-weather-data-processing-pipeline/
@@ -89,18 +100,6 @@ aws-weather-data-processing-pipeline/
 ![QuickSight Dashboard](assets/quicksight-dashboard.png)
 
 *Figure 2: Amazon QuickSight Dashboard created from final weather dataset.*  
-
-## How to Use
-
-1. **Deploy the infrastructure** using Terraform.
-
-2. **Create a new folder** named `raw` in the `csv-raw-data` S3 bucket. Upload the assets/weather_data.csv file to the folder to trigger the S3 event. Verify that the file was processed and copied to the `csv-processed-data/processed/` folder.
-
-3. **Create the Glue resources manually in the AWS Management Console**, following these steps: setup a Glue Data Catalog, create a Glue Crawler to discover schema, create a Glue Job using Visual ETL, and prepare transformed data for visualization. See [GLUE_SETUP.md](assets/GLUE_SETUP.md) for full details.
-
-4. **Visualize the data using QuickSight in the AWS Management Console**, following these steps: setup a QuickSight account, connect to the data source using the manifest.json file, build a QuickSight dashboard, and share/publish the dashboard. See [QUICKSIGHT_SETUP.md](assets/QUICKSIGHT_SETUP.md) for full details.
-
-5. **Test pipeline with new data, ensuring dynamic updates.**
 
 ## Future Enhancements
 - Add automated error handling with SQS/DLQ for failed Lambda events.

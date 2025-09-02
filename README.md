@@ -29,7 +29,7 @@ This project implements a serverless ETL pipeline for preprocessing weather data
 - Core infrastructure (S3, Lambda, IAM) deployed via **Terraform IaC**.  
 
 ## Tech Stack
-- **Languages:** Python 3.x  
+- **Languages:** Python 3.13  
 - **AWS Services:** S3, Lambda, IAM, Glue, QuickSight
 - **IaC Tool:** Terraform  
 - **Other Tools:** AWS CLI  

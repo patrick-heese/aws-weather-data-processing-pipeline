@@ -16,7 +16,7 @@ This project implements a serverless ETL pipeline for preprocessing weather data
 - Designing serverless ETL pipelines using AWS managed services.  
 - Implementing data preprocessing logic with AWS Lambda.  
 - Automating deployments with Terraform.  
-- Managing IAM roles and permissions securely.  
+- Building IAM roles and policies with least-privilege access, scoped to application resources (managed policies used where practical).  
 - Structuring Infrastructure-as-Code projects for clarity and reusability.  
 - Visualizing processed data with QuickSight.  
 

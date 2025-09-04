@@ -74,20 +74,20 @@ Also confirm the AWS CLI is configured (`aws configure`) with credentials that h
 ## Project Structure
 ```plaintext
 aws-weather-data-processing-pipeline/
-├── assets/                      # Images, diagrams, example data
+├── assets/                      	  # Images, diagrams, example data
 │   ├── architecture-diagram.png      # Project architecture
 │   ├── quicksight-dashboard.png	  # Dashboard image
 │   ├── weather_data.csv			  # Sample data
 │   ├── GLUE_SETUP.md	  			  # Glue setup instructions
 │   └── QUICKSIGHT_SETUP.md	  		  # QuickSight setup instructions
-├── terraform/                   # Terraform templates
+├── terraform/                   	  # Terraform templates
 │   ├── main.tf                       # Main Terraform config
 │   ├── variables.tf                  # Input variables
 │   ├── outputs.tf					  # Exported values
 │   ├── terraform.tfvars              # Default variable values
 │   ├── providers.tf			      # AWS provider definition
 │   └── versions.tf					  # Terraform version constraint
-├── src/                         # Lambda source code and manifest file
+├── src/                              # Lambda source code and manifest file
 │    ├── preprocessing_function/	  # Lambda function
 │    │  └── preprocessing_lambda.py       
 │    └── manifest.json				  # Manifest file for QuickSight
